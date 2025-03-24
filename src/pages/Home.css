@@ -1,0 +1,50 @@
+.home-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #0070f3, #00d4ff);
+    color: white;
+    text-align: center;
+  }
+  
+  .hero-section {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 50px;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+   
+  }
+  
+  .hero-image {
+    width: 150px;
+    margin-bottom: 20px;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    
+  }
+  
+  p {
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
+  
+  .login-btn {
+    padding: 10px 20px;
+    font-size: 1.3rem;
+    border: none;
+    border-radius: 5px;
+    background: #fff;
+    color: #0070f3;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .login-btn:hover {
+    background: #00b8ff;
+    color: white;
+  }
+  
