@@ -32,11 +32,11 @@ function Dashboard() {
           <i className="fas fa-dollar-sign"></i>
           <p>Funds Management</p>
         </div>
-        <div className="feature">
-          <i className="fas fa-qrcode"></i>
+        <div className="feature" onClick={() => navigate("/scan-pay")}>
+          <i className="fas fa-qrcode" ></i>
           <p>Scan & Pay</p>
         </div>
-        <div className="feature">
+        <div className="feature" onClick={() => navigate("/analytics")}>
           <i className="fas fa-chart-line"></i>
           <p>Dashboard & Analysis</p>
         </div>
@@ -52,7 +52,7 @@ function Dashboard() {
           <i className="fas fa-shopping-cart"></i>
           <p>Cashback Offers</p>
         </div>
-        <div className="feature">
+        <div className="feature" onClick={() => navigate("/notifications")}>
           <i className="fas fa-bell"></i>
           <p>Notifications</p>
         </div>

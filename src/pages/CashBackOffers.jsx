@@ -2,21 +2,40 @@ import { useState } from "react";
 
 const CashbackOffers = () => {
   const [activeTab, setActiveTab] = useState("offers");
+  const [balance, setBalance] = useState(10000); // Initial balance
+  const [message, setMessage] = useState(""); // Success message
 
   const offers = [
-    { id: 1, text: "10% Cashback on Mobile Recharge", code: "MOBILE10" },
-    { id: 2, text: "₹50 Cashback on Bill Payments", code: "BILL50" },
-    { id: 3, text: "Flat 5% off on Shopping", code: "SHOP5" },
+    { id: 1, text: "10% Cashback on Mobile Recharge", code: "MOBILE10", amount: 100 },
+    { id: 2, text: "₹50 Cashback on Bill Payments", code: "BILL50", amount: 50 },
+    { id: 3, text: "Flat 5% off on Shopping", code: "SHOP5", amount: 75 },
   ];
 
   const cashback = [
-    { id: 1, text: "₹200 Cashback Credited from Recharge" },
-    { id: 2, text: "₹50 Cashback from Bill Payment" },
+    { id: 1, text: "₹200 Cashback Credited from Recharge", amount: 200 },
+    { id: 2, text: "₹50 Cashback from Bill Payment", amount: 50 },
   ];
+
+  // Apply Offer
+  const applyOffer = (amount, text) => {
+    setBalance(balance - amount);
+    setMessage(`✅ Offer applied: ${text}`);
+    setTimeout(() => setMessage(""), 3000);
+  };
+
+  // Add Cashback
+  const addCashback = (amount, text) => {
+    setBalance(balance + amount);
+    setMessage(`💰 Cashback added: ${text}`);
+    setTimeout(() => setMessage(""), 3000);
+  };
 
   return (
     <div style={styles.container}>
-      <h3>Your balance <strong>Rs 10,000</strong></h3>
+      <h3>Your balance: <strong>Rs {balance}</strong></h3>
+
+      {/* Success Message */}
+      {message && <div style={styles.message}>{message}</div>}
 
       {/* Tabs */}
       <div style={styles.tabs}>
@@ -41,11 +60,24 @@ const CashbackOffers = () => {
           ? offers.map((offer) => (
               <div key={offer.id} style={styles.card}>
                 {offer.text} 
-                <button style={styles.button}>Apply Code: {offer.code}</button>
+                <button 
+                  style={styles.button} 
+                  onClick={() => applyOffer(offer.amount, offer.text)}
+                >
+                  Apply Code: {offer.code}
+                </button>
               </div>
             ))
           : cashback.map((cb) => (
-              <div key={cb.id} style={styles.card}>{cb.text}</div>
+              <div key={cb.id} style={styles.card}>
+                {cb.text} 
+                <button 
+                  style={styles.button} 
+                  onClick={() => addCashback(cb.amount, cb.text)}
+                >
+                  Claim
+                </button>
+              </div>
             ))}
       </div>
     </div>
@@ -58,6 +90,13 @@ const styles = {
     width: "80%",
     margin: "auto",
     textAlign: "center",
+  },
+  message: {
+    background: "#d4edda",
+    color: "#155724",
+    padding: "10px",
+    margin: "10px 0",
+    borderRadius: "5px",
   },
   tabs: {
     display: "flex",
@@ -91,6 +130,7 @@ const styles = {
     borderRadius: "6px",
     display: "flex",
     justifyContent: "space-between",
+    alignItems: "center",
   },
   button: {
     background: "blue",

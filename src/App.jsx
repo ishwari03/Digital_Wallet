@@ -9,6 +9,9 @@ import FundManagement from "./pages/FundManagement";
 import BillPayment from "./pages/BillPayment";
 import CashBackOffers from "./pages/CashBackOffers";
 import RequestSplitPayments from "./pages/RequestSplitPayments";
+import ScanPay from "./pages/ScanPay";
+import Notifications from "./pages/Notifications";
+import Analytics from "./pages/Analytics";
 function App() {
   return (
     <>
@@ -23,6 +26,10 @@ function App() {
         <Route path="/billpayment" element={<BillPayment />} />
         <Route path="/cashback-offers" element={<CashBackOffers />} />
         <Route path="/request-split-payments" element={<RequestSplitPayments />} />
+        <Route path="/scan-pay" element={<ScanPay />} />
+        <Route path="/notifications" element = {<Notifications/>} />
+        <Route path="/analytics" element={<Analytics />} />
+
         <Route path="*" element={<h2>Page Not Found</h2>} />
       </Routes>
     </>
