@@ -1,12 +1,42 @@
-# React + Vite
+# 💸 PayWay - Digital Wallet Payment Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+PayWay is a simple and secure digital wallet system built with MERN stack. It allows users to manage their wallet balance, view transaction history, and perform UPI-style payments using QR scanning.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## Expanding the ESLint configuration
+- 🔐 User Authentication (JWT-based)
+- 💼 Wallet Management – View balance, manage transactions
+- 💳 Funds Management – Add or withdraw money
+- 📷 Scan & Pay – UPI-style QR code payment
+- 📊 Dashboard & Analysis – Track expenses and income visually
+- 🧾 Recharge & Bills – Pay mobile, electricity bills (customizable)
+- 🤝 Request/Splits – Send or receive split payment requests
+- 🎁 Cashback Offers – View and redeem special deals
+- 🔔 Notifications – Real-time alerts for transactions and offers
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🛠️ Tech Stack
+
+- **Frontend:** React, React Router, Axios
+- **Backend:** Node.js, Express.js
+- **Database:** MongoDB + Mongoose
+- **Auth:** JWT Authentication
+- **QR Scanning:** `html5-qrcode`
+
+---
+
+## 📌 To-Do / Future Improvements
+- ✅ OTP-based login
+- ⏳ Razorpay or Stripe integration
+- ⏳ Budget categories and reminders
+
+---
+
+## 🤝 Contributions
+Contributions are welcome! Please fork the repo and raise a pull request.
+
+
+
